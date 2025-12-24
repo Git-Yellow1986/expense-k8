@@ -33,9 +33,9 @@ spec:
       containers:
       - name: backend
         image: yellow1238/backend:v1
-        evenFrom:
-          - configMapRef:
-              name: backend
+        envFrom:
+        - configMapRef:
+            name: backend
         ports:
         - containerPort: 8080
 ---
