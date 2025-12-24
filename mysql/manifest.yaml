@@ -26,4 +26,20 @@ spec:
         image: yellow1238/mysql:v1
         ports:
         - containerPort: 3306
-        
+---
+# if anybod wants to connect mysql from outside of cluster
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  namespace: expense
+spec:
+  selector:
+    app: mysql
+    tier: db
+    project: expense
+  ports:
+    - name: mysql-port
+      port: 3306
+      protocol: TCP
+      targetPort: 3306    
