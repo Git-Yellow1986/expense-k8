@@ -40,11 +40,10 @@ metadata:
   namespace: expense
 spec:
   type: LoadBalancer
- 
   selector:
-    app: frontend
-    project: expense
-    tier: web
+   app: frontend
+   project: expense
+   tier: web
   ports:
   - name: frontend-port
     port: 80 # service port
