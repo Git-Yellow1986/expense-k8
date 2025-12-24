@@ -2,11 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  namespace: expense
   labels:
     app: frontend
     project: expense
     tier: web
-namespace: expense
 spec:
   replicas: 2
   selector:
