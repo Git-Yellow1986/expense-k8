@@ -22,13 +22,12 @@ spec:
         tier: web
     spec:
       containers:
-        - envFrom:
-            - configMapRef:
-                name: frontend
-          image: yellow1238/frontend:v1
-          name: frontend
-          ports:
-            - containerPort: 80
+      - name: frontend
+        image: yellow1238/frontend:v1
+        ports:
+        - containerPort: 80
+
+          
 ---
 # if anybod wants to connect backend from outside of cluster
 apiVersion: v1
